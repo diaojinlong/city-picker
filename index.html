@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=renderer content=webkit>
+<title></title>
+</head>
+<body>
+<div>
+<select id="province"></select>
+<select id="city"></select>
+<select id="district"></select>
+</div>
+<input type="button" value="查看结果" onclick="selectValue()" />
+<div>
+<select id="province1"></select>
+<select id="city1"></select>
+<select id="district1"></select>
+</div>
+<input type="button" value="查看结果" onclick="selectValue1()" />
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="./districts.js"></script>
+<script>
+
+	var selectObj = new districtSelect();
+	selectObj.set({province:"#province",city:"#city",district:"#district"})
+	selectObj.init('110101');
+	function selectValue(){
+		alert(selectObj.val());
+	}
+	
+	var selectObj1 = new districtSelect();
+	selectObj1.set({province:"#province1",city:"#city1",district:"#district1"})
+	selectObj1.init('710000');
+	function selectValue1(){
+		alert(selectObj1.val());
+	}
+	
+</script>
+</body>
+</html>
